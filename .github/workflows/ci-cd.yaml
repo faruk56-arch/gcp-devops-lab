@@ -29,6 +29,12 @@ jobs:
         docker build -t app ./app
         docker tag app europe-west1-docker.pkg.dev/project-40cabc90-4d22-4606-b51/docker-repo/app:${{ github.sha }}
         docker push europe-west1-docker.pkg.dev/project-40cabc90-4d22-4606-b51/docker-repo/app:${{ github.sha }}
+    
+    - name: Get GKE credentials
+      uses: google-github-actions/get-gke-credentials@v2
+      with:
+        cluster_name: gke-autopilot
+        location: europe-west1
 
     - name: Deploy
       run: |
