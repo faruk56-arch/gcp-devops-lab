@@ -26,7 +26,7 @@ jobs:
 
     - name: Build & Push
       run: |
-        docker build -t app .
+        docker build -t app ./app
         docker tag app europe-west1-docker.pkg.dev/YOUR_PROJECT_ID/docker-repo/app:${{ github.sha }}
         docker push europe-west1-docker.pkg.dev/YOUR_PROJECT_ID/docker-repo/app:${{ github.sha }}
 
