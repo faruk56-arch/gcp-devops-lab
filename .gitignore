@@ -1,0 +1,18 @@
+# Terraform local working directory and provider binaries
+terraform/.terraform/
+
+# Terraform state files (sensitive, machine-local)
+terraform/*.tfstate
+terraform/*.tfstate.*
+
+# Terraform plan artifacts
+terraform/*.tfplan
+
+# Optional local override files
+terraform/override.tf
+terraform/override.tf.json
+terraform/*_override.tf
+terraform/*_override.tf.json
+
+# Environment files
+*.env
